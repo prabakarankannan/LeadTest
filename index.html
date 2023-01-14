@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>Place Search Pagination</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="map">
+        
+      </div>
+      <div id="sidebar">
+        <h2>Location of Merchant</h2>
+
+        <input
+        type="text" id="txtPlaces"
+        placeholder="Enter a location"
+      />
+      <br/>
+        <h2>Keyword Merchant</h2>
+        <input
+        type="text" id="input"
+        placeholder="Enter Keyword to search Merchant"
+      />
+      <br/>
+      <h2>Radius In Meter</h2>
+      <input
+      type="text" id="radius"
+      value="1500"
+    />
+        <br/>
+        <h2>Results </h2><h2 id="total">0</h2>
+        <ul id="places"></ul>
+        <button id="more">Load more results</button>
+      </div>
+    </div>
+    <input type="text" id="latitude" value=19.2014678>
+    <input type="text" id="longitude" value=72.959306>
+    <input type="hidden" id="totals" value=0>
+    
+
+    <!-- 
+     The `defer` attribute causes the callback to execute after the full HTML
+     document has been parsed. For non-blocking uses, avoiding race conditions,
+     and consistent behavior across browsers, consider loading using Promises
+     with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqPsBSRa_tmE3i16a3WNFe4B66EOQ5-04&callback=initMap&libraries=places&v=weekly"
+      defer
+    ></script>
+  </body>
+</html>
